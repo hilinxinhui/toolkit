@@ -1,6 +1,8 @@
 #! /usr/bin/env bash
 # shellcheck source-path=..
 
+OVERLEAF_IMAGE_NAME=hilinxinhui/sharelatex
+
 set -euo pipefail
 
 #### Detect Toolkit Project Root ####
@@ -20,6 +22,7 @@ source "$TOOLKIT_ROOT/lib/shared-functions.sh"
 
 function build_environment() {
   canonicalize_data_paths
+  IMAGE_VERSION=v1
   set_base_vars
 
   if [[ $REDIS_ENABLED == "true" ]]; then
